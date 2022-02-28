@@ -1,6 +1,6 @@
 """ 
 SMTP : Simple Mail Transfer Protocol
-
+Only for ASCII Encoding
 """
 
 import os
@@ -30,6 +30,7 @@ send_to = [gmail_user] # List of receivers
 
 subject =  "Test E-Mail 1"
 body = "Hello Body"
+
 
 
 email_text = """\
