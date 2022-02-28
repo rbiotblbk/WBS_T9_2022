@@ -67,7 +67,7 @@ try:
         smtp.login(gmail_user, gmail_password)
         smtp.send_message(message)
 
-        print("Sent Successfully !!")
+        print("The Email is sent Successfully !!")
 
 except Exception as ex:
     print("Something went wrong !\n", ex)
