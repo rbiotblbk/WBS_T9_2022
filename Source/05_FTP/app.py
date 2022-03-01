@@ -1,15 +1,22 @@
 from ftplib import FTP 
 import os 
 from pathlib import Path 
+import json 
 
 os.chdir(Path(__file__).parent)
 
-# Connection Data
-FTP_SERVER = "ngcobalt414.manitu.net"
-FTP_USER = "XXXXX"
-FTP_PASS = "XXXX"
+# Read Config
+with open("./ftp.json", mode= "r") as file:
+    content = file.read()
+    json_dict = json.loads(content)
 
-dir_name = "Mohamed"
+
+# Connection Data
+FTP_SERVER = json_dict["ftp_server"]
+FTP_USER = json_dict["ftp_user"]
+FTP_PASS = json_dict["ftp_pass"]
+
+FTP_DIR_NAME = json_dict["ftp_dirname"]
 
 # FTP Credentials
 ftp = FTP(FTP_SERVER)
@@ -17,8 +24,8 @@ ftp.login(FTP_USER, FTP_PASS)
 
 
 # Folder Navigation
-dir_name = "Mohamed"
-ftp.cwd(dir_name)
+FTP_DIR_NAME = "Mohamed"
+ftp.cwd(FTP_DIR_NAME)
 
 
 def upload_file():
