@@ -5,6 +5,8 @@ import os
 from pathlib import Path 
 os.chdir(Path(__file__).parent)
 
+# List of User Agents : https://www.networkinghowtos.com/howto/common-user-agent-list/
+
 try:
     url = "https://www.google.com/search?q=python" 
 
