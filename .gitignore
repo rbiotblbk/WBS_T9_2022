@@ -8,6 +8,7 @@ __pycache__/
 
 # Credintials
 *.json
+*.html
 
 # Distribution / packaging
 .Python
